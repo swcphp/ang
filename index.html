@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+	<title>magnett</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://github.com/cowboy/jquery-postmessage/raw/master/jquery.ba-postmessage.js"></script>
+
+	<!--script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script-->
+	<link rel="stylesheet" href="css/app.css">
+	<!--script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-resource.js"></script>
+
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+	<script src="js/filters.js"></script>
+	<script src="js/services.js"></script-->
+<script type="text/javascript" src="http://provider.easyxdm.net/current/easyXDM.debug.js"></script>
+</head>
+<body>
+
+<div ng-view></div>
+<!--iframe name="myajax" id="myajax" src="https://ext.kinopoisk.ru/android/2.3.0/getKPGenresView?key=81b0523a32094abd8348eddfb95558ca" onload="/*console.log($(this).contents());*/"></iframe-->
+<button onclick="test()">test</button>
+
+
+
+
+
+
+<script>
+
+var socket = new easyXDM.Socket({
+    onMessage: function(message, origin){
+        alert("Received '" + message + "' from '" + origin + "'");
+        socket.postMessage("Indeed it does!");
+    }
+});
+
+
+var socket = new easyXDM.Socket({
+    remote: "http://remotedomain/provider.html",
+    onMessage: function(message, origin){
+        alert("Received '" + message + "' from '" + origin + "'");
+    },
+    onReady: function() {
+        socket.postMessage("Yay, it works!");
+    }
+});
+
+	function test(){
+/*		var obj = $('#myajax');
+		obj = document.getElementById('myajax');//.contentWindow.document.body.innerHTML
+		console.log(getIDoc(obj));
+*/
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://www.gravatar.com/avatar/360ebfce7ad37f53a1302f8e68843139?s=64&d=identicon&r=PG', true);
+//xhr.open('GET', 'http://jsfiddle.net/img/logo.png', true);
+
+
+// Хак для того, чтобы байты были переданы неизменными
+xhr.overrideMimeType('text/plain; charset=x-user-defined');
+
+xhr.onreadystatechange = function(e) {
+  if (this.readyState == 4 && this.status == 200) {
+    var binStr = this.responseText;
+console.log(this);
+    for (var i = 0, len = binStr.length; i < len; ++i) {
+      var c = binStr.charCodeAt(i);
+      //String.fromCharCode(c & 0xff);
+      var byte = c & 0xff;
+    }
+  }
+};
+
+xhr.send();
+	}
+	function getIDoc(e) {
+		//return (e.contentDocument) ? e.contentDocument : (e.contentWindow) ? e.contentWindow.document : e.document;
+
+	}
+
+</script>
+</body>
+</html>

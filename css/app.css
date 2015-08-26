@@ -1,0 +1,294 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Lato', sans-serif;
+    background-color: black;
+    color: white
+}
+
+.title {
+    font-size: 2em;
+    line-height: 1.3em;
+}
+
+.year {
+    font-size: 0.8em;
+    opacity: 0.5
+}
+
+.movie-content {
+    position: absolute !important;
+    background-color: black;
+    /*margin-top: 20%;*/
+    margin-right: 10px;
+    border-radius: 10px;
+    opacity: .8;
+    max-width: 580px !important;
+    padding: 25px;
+    min-height: 155px;
+    color: white;
+    box-shadow: 0px 0px 40px #ccc;
+    overflow: hidden;
+}
+
+.movie-content .views-field-title span a {
+    color: #ffffff;
+    font-size: 2em;
+    line-height: 1.3em;
+    text-decoration: none;
+    text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
+}
+
+.movie_poster {
+    margin: 5% 5% 10% 10%;
+    float: right;
+    box-shadow: 0px 0px 1px white;
+    border: 1px solid black
+}
+
+.clear {
+    clear: both
+}
+
+.movie_rating_stars {
+    display: inline-block;
+    width: 110px;
+    font-size: 0.8em
+}
+
+.movie_rating_value {
+    display: inline-block;
+    width: 20px
+}
+
+.gold {
+    color: #fdd017
+}
+
+.length {
+    float: right;
+    opacity: 0.7
+}
+
+.empty {
+    opacity: 0.7
+}
+
+.movie_plot {
+    font-size: 0.9em;
+    margin-top: 10px
+}
+
+#bg {
+    display: none;
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%
+}
+
+#bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    min-width: 50%;
+    min-height: 50%
+}
+
+.poster {
+    float: left;
+    margin-right: 8px;
+}
+
+h1.title {
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.info-panel {
+    margin-right: 50px;
+}
+
+.info-panel .panel-button {
+    float: right;
+    width: 50px;
+    margin-right: -70px;
+    margin-left: 5px;
+    height: 380px;
+}
+
+.info-panel .panel-button div {
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.info-panel .panel-button .home a div {
+    background-image: url("/../../../../../misc/home.png");
+}
+
+.info-panel .panel-button .move {
+    background-image: url("/../../../../../misc/previous.png");
+}
+
+.info-panel .panel-button .move.show {
+    background-image: url("/../../../../../misc/next.png");
+}
+
+.info-panel .panel-button .gallery {
+    background-image: url("/../../../../../misc/search_images.png");
+}
+
+.info-panel .panel-button .actors {
+    background-image: url("/../../../../../misc/actors.png");
+}
+
+.info-panel .panel-button .info {
+    background-image: url("/../../../../../misc/torrent_info.png");
+}
+
+.close {
+
+}
+
+/*actors */
+.gallery .ajax-progress-throbber,
+.actors .ajax-progress-throbber {
+    display: none;
+}
+
+#other-content-urls,
+#images-list,
+#actors-list {
+    position: absolute !important;
+    background-color: black;
+    margin-right: 10px;
+    border-radius: 10px 10px 0 0;
+    opacity: .8;
+    padding: 25px;
+    color: white;
+    box-shadow: 0px 0px 40px #ccc;
+    bottom: 0px;
+    margin-left: 70px;
+    left: -2000px;
+    max-width: 1700px;
+
+}
+#images-list .bigImage,
+#actors-list .bigImage{
+    position: absolute !important;
+    background-color: black;
+    margin-right: 10px;
+    border-radius: 10px 10px 0 0;
+    opacity: 1;
+    padding: 25px;
+    color: white;
+    box-shadow: 0px -10px 40px #ccc;
+    display: none;
+}
+
+#images-list .wrap-img,
+#actors-list .wrap-img {
+    display: inline;
+    float: left;
+    margin: 0 5px 5px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+#images-list .wrap-img{
+    height: 50px;
+}
+#actors-list .wrap-img {
+    height: 55px;
+    width: 41px;
+}
+
+#images-list .wrap-img img,
+#actors-list .wrap-img img {
+
+    position: relative;
+    left: -2px;
+    top: -2px;
+    display: inline;
+}
+
+#images-list .wrap-img img{
+    height: 50px;
+}
+
+#actors-list .wrap-img img {
+    width: 45px;
+}
+
+#images-list .wrap-img img.hover,
+#actors-list .wrap-img img.hover {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: inline;
+}
+
+#images-list .wrap-img img.hover{
+    height: 50px;
+}
+#actors-list .wrap-img img.hover {
+    width: 41px;
+}
+
+.hover {
+    cursor: pointer;
+}
+
+.close {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    background-image: url("/../../../../../misc/button_cancel.png");
+    position: absolute;
+    right: 4px;
+    top: 6px;
+}
+/*end actors*/
+
+a.active{
+    color:white;
+}
+.views-field-field-mdb-genres a.active{
+    color:grey;
+    background-color: lightyellow;
+}
+
+/*start gallery*/
+#wrapper_gallery {
+    position: relative;
+    height: 320px;
+    width: 280px;
+    margin: 15px auto;
+}
+
+#wrapper_gallery img {
+    position: relative;
+    float: left;
+    padding: 0;
+    margin: 5px;
+    -webkit-box-shadow: 0 0 5px #000;
+    -moz-box-shadow: 0 0 5px #000;
+    border: solid 2px #FFFAF2;
+    border-bottom: solid 15px #FFFAF2;
+    -webkit-transition: -webkit-transform 0.20s ease-in-out;
+    -moz-transition: -moz-transform 0.20s ease-in-out;
+}
+
+/*end gallery*/
+
+#preload-img{
+    position: absolute;
+    left:-2500px;
+
+
+}
